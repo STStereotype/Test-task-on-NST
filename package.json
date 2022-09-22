@@ -2,11 +2,13 @@
   "name": "tton-nst",
   "version": "0.0.0",
   "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run start\"",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "server": "json-server -w db.json --routes routes.json -p 3001"
   },
   "private": true,
   "dependencies": {

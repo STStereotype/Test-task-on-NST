@@ -10,17 +10,24 @@
     <li>{{person.firstName}}</li>
     <li>{{person.lastName}}</li>
     <li class="actions">
-      <p class="actions__edit" (click)="editPerson(i)"></p>
-      <p class="actions__delete" (click)="deletePerson(i)"></p>
+      <p class="actions__edit" (click)="changePerson(i)"></p>
+      <p class="actions__delete" (click)="personIdForDelete = person.id; deletePersonFlag = true"></p>
     </li>
   </ul>
   <input class="btn" type="button" value="Добавить сотрудника" (click)="addPerson()">
-  <ng-container *ngIf="openForm">
+  <ng-container *ngIf="openFormFlag">
     <app-auxiliary-form
       [configForInput]="configForInput['addOrEdit']"
       [currentPerson]="currentPerson"
       (newData)="updateData($event)"
       [title]="formTitle">
     </app-auxiliary-form>
+  </ng-container>
+  <ng-container *ngIf="deletePersonFlag">
+    <app-modal-dialog
+      (isConfirmed)="deletePerson($event)"
+      header="Удаление сотрудника"
+      description="Вы действительно хотите удаление сотрудника?">
+    </app-modal-dialog>
   </ng-container>
 </div>

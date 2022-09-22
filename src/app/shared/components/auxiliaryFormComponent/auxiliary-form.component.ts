@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConfigInputModel, Person } from "../../components/person/model";
+import { ConfigInputModel, Person } from '../../../components/person/model';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({

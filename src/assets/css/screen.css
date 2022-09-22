@@ -51,7 +51,7 @@
   border-radius: 5px;
   margin: 15px 0 0 0;
 }
-.form_wrapper {
+.form_wrapper, .modal-dialog_wrapper{
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -64,9 +64,9 @@
   border: 1px solid  #666666;
   border-radius: 10px;
   background: white;
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
 }
-.form .title {
+.form .title, .modal-dialog .header {
   color: white;
   font-weight: normal;
   padding: 5px 10px;
@@ -94,4 +94,34 @@
   height: 30px;
   margin: 10px 0 0 0;
   font-size: 16px;
+}
+
+.modal-dialog .description {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 22px;
+}
+.modal-dialog {
+  width: 500px;
+  border: 1px solid  #666666;
+  border-radius: 10px;
+  background: white;
+  margin: 10px auto 0 auto;
+}
+.btn_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px 10px;
+}
+.btn_box .btn_red {
+  background: #dc0000;
+  border: none;
+  font-size: 18px;
+  padding: 3px 10px;
+}
+.btn_box .btn_green {
+  background: #00bb00;
+  border: none;
+  font-size: 18px;
+  padding: 3px 10px;
 }

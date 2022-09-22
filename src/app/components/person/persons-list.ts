@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ConfigInputModel, Person } from "./model";
+import { ConfigInputModel, Person } from './model';
+import { PersonService } from './service/person.service';
 
 @Component({
   selector: 'app-employees-output-form',
@@ -7,7 +8,9 @@ import { ConfigInputModel, Person } from "./model";
 })
 
 export class PersonsList {
-  openForm: boolean = false;
+  openFormFlag: boolean = false;
+  deletePersonFlag = false;
+  personIdForDelete!: number;
   currentPerson!: Person;
   configForInput: { [key:string]: ConfigInputModel[] } = {
     'addOrEdit': [
@@ -26,6 +29,16 @@ export class PersonsList {
   formTitle = '';
   persons: Array<Person> = [];
 
+  constructor(private personService: PersonService) {
+    this.getPerson();
+  }
+  getPerson(): void {
+    let subscription = this.personService.getPerson().subscribe((person: any) => {
+      this.persons = person;
+      subscription.unsubscribe();
+    });
+  }
+
   addPerson(): void {
     let newId = 1;
     if (this.persons.length !== 0) {
@@ -33,10 +46,10 @@ export class PersonsList {
     }
     this.currentPerson = { id: newId, firstName: '', lastName: '' };
     this.creatingSettings('Создание сотрудника');
-    this.openForm = true;
+    this.openFormFlag = true;
   }
 
-  editPerson(id: number): void {
+  changePerson(id: number): void {
     let currentPerson = this.persons[id];
     this.currentPerson = {
       id: currentPerson.id,
@@ -44,7 +57,7 @@ export class PersonsList {
       lastName: currentPerson.lastName
     };
     this.creatingSettings( 'Редактирование сотрудника');
-    this.openForm = true;
+    this.openFormFlag = true;
   }
 
   creatingSettings(formTitle: string): void {
@@ -53,24 +66,39 @@ export class PersonsList {
     this.formTitle = formTitle
   }
 
-  deletePerson(id: number): void {
-    this.persons.splice(id, 1);
+  deletePerson(result: boolean) {
+    if (result) {
+      let subscription = this.personService.deletePerson(this.personIdForDelete)
+        .subscribe( () => {
+          this.getPerson();
+          subscription.unsubscribe();
+        });
+    }
+    this.deletePersonFlag = false;
   }
 
   updateData(event: any): void {
+    console.log(event);
     if (event === undefined) {
-      this.openForm = false;
+      this.openFormFlag = false;
       return;
     }
     if (this.persons.length === 0 || this.persons[this.persons.length - 1].id < event.id) {
-      this.persons.push(event);
+      let subscription = this.personService.setPerson(event).subscribe((person: any) => {
+        this.persons.push(person);
+        subscription.unsubscribe();
+      });
     } else {
       for (let i = 0; i < this.persons.length; i++) {
         if (this.persons[i].id === event.id) {
-          this.persons[i] = event;
+          let subscription = this.personService.updatePerson(event.id, event)
+            .subscribe((person: any) => {
+                this.persons[i] = person;
+                subscription.unsubscribe();
+              });
         }
       }
     }
-    this.openForm = false;
+    this.openFormFlag = false;
   }
 }

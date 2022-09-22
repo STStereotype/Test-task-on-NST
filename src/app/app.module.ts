@@ -6,19 +6,26 @@ import { AppComponent } from './app.component';
 
 import { Components } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PersonService } from "./components/person/service/person.service";
+import {HttpClientModule} from "@angular/common/http";
+import {SharedComponents} from "./shared/components";
 
 @NgModule({
   declarations: [
     AppComponent,
-    Components
+    Components,
+    SharedComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    PersonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
