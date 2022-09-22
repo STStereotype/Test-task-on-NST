@@ -1,0 +1,26 @@
+<div class="form_wrapper">
+  <div class="form">
+    <p class="title" >{{title}}</p>
+    <p class="back" (click)="back()">Назад к списку</p>
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="input_wrapper">
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          formControlName="firstName"
+          (input)="onlyLetters(form.get('firstName'))"
+          placeholder="Введите имя сотрудника">
+        <p *ngIf="validation(form.get('firstName'))" class="invalid">Обязательное поле!</p>
+        <input
+          type="text" id="lastName"
+          name="lastName"
+          formControlName="lastName"
+          (input)="onlyLetters(form.get('lastName'))"
+          placeholder="Введите фамилию сотрудника">
+        <p *ngIf="validation(form.get('lastName'))" class="invalid">Обязательное поле!</p>
+      </div>
+      <input class="btn" type="button" value="Сохранить" (click)="save()">
+    </form>
+  </div>
+</div>

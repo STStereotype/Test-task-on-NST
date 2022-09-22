@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/screen.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 1400px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 10px 30px 30px 30px;
+}

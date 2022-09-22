@@ -1,0 +1,97 @@
+:root {
+  --icon-emploee: url("data:image/svg+xml;charset=UTF-8,%3csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='12.5' cy='12.5' r='12.5' fill='%23DDDDDD'/%3e%3cpath d='M15.5048 8.05287H15.3245C15.3245 6.86797 15.1363 5.56059 14.1427 4.91504C13.1513 4.27095 11.8938 4.24762 10.8682 4.92102C9.87942 5.57023 9.67547 6.87 9.67547 8.05287H9.49518V9.73556H9.97595L10.637 11.5985C10.637 12.2374 10.21 12.7975 9.59386 12.9666L7.5721 13.5216C6.85061 13.7711 6.41594 14.0982 6.08295 14.7291C5.62891 15.5892 5.58893 16.5983 5.58893 17.571C5.58893 18.0925 5.80011 18.6049 6.26691 18.8377C8.99752 20.199 15.9898 20.1012 18.5667 18.9269C19.1321 18.6692 19.3509 18.0491 19.3509 17.4278V17.4027C19.351 16.5307 19.351 15.6344 19.0202 14.8282C18.6681 13.9702 18.121 13.6962 17.1875 13.5216L15.2829 12.9774C14.6672 12.8015 14.2428 12.2388 14.2428 11.5985L14.9639 9.73556H15.5048V8.05287Z' fill='%23999999'/%3e%3c/svg%3e ");
+  --icon-pencil: url("data:image/svg+xml;charset=UTF-8,%3csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5 0.5H29.5V29.5H5C2.51472 29.5 0.5 27.4853 0.5 25V5C0.5 2.51472 2.51472 0.5 5 0.5Z' fill='%23FFF2CC' stroke='%23DFC678'/%3e%3cpath d='M7.7586 26.3793L3.62067 27.4138L4.65515 23.2758L19.6552 8.27585L22.7586 11.3793L7.7586 26.3793Z' fill='%23737373' stroke='%23737373'/%3e%3cpath d='M26.3793 7.75863L24.3104 9.8276L21.2069 6.72415L23.2759 4.65518L26.3793 7.75863Z' fill='%23737373' stroke='%23737373'/%3e%3c/svg%3e ");
+  --icon-close: url("data:image/svg+xml;charset=UTF-8,%3csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M25 0.5H0.5V29.5H25C27.4853 29.5 29.5 27.4853 29.5 25V5C29.5 2.51472 27.4853 0.5 25 0.5Z' fill='%23F8CECC' stroke='%23D18F8C'/%3e%3cpath d='M3 3L26.6464 26.6464' stroke='%23737373'/%3e%3cpath d='M3 26.6464L26.6464 2.99999' stroke='%23737373'/%3e%3c/svg%3e ");
+}
+.employees-form ul {
+  display: grid;
+  grid-template-columns: 30px 1fr 1fr 70px;
+  align-items: center;
+  padding: 10px;
+}
+.employees-form ul li {
+  overflow: hidden;
+  padding-left: 10px;
+  }
+.title {
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  background: #DDDDDD;
+  font-weight: 700;
+  font-size: 20px;
+}
+.employee {
+  border-bottom: 1px solid #999999;
+}
+.actions {
+  display: flex;
+  margin: 0 0 0 auto;
+}
+.actions__edit {
+  width: 30px;
+  height: 30px;
+  background: var(--icon-pencil) no-repeat;
+}
+.actions__delete {
+  width: 30px;
+  height: 30px;
+  background: var(--icon-close) no-repeat;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  background: var(--icon-emploee) no-repeat;
+}
+.btn {
+  font-size: 18px;
+  background: #3D8BCD;
+  color: white;
+  border: none;
+  padding: 12px 10px;
+  border-radius: 5px;
+  margin: 15px 0 0 0;
+}
+.form_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.50);
+}
+.form {
+  max-width: 500px;
+  border: 1px solid  #666666;
+  border-radius: 10px;
+  background: white;
+  margin: 0 auto;
+}
+.form .title {
+  color: white;
+  font-weight: normal;
+  padding: 5px 10px;
+  background: #666666;
+}
+.form form {
+  padding: 0 10px;
+}
+.form .btn {
+  display: block;
+  font-size: 14px;
+  margin: 5px 0 5px auto;
+}
+.back {
+  font-size: 14px;
+  color: #3D8BCD;
+  cursor: pointer;
+  margin: 10px 0 0 10px;
+}
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.input_wrapper input {
+  height: 30px;
+  margin: 10px 0 0 0;
+  font-size: 16px;
+}
