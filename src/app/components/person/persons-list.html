@@ -12,8 +12,8 @@
   </ng-container>
   <ul class="employee" *ngFor="let person of persons; let i = index">
     <li class="icon"></li>
-    <li>{{person.firstName}}</li>
-    <li>{{person.lastName}}</li>
+    <li class="text">{{person.firstName}}</li>
+    <li class="text">{{person.lastName}}</li>
     <li class="actions">
       <p class="actions__edit" (click)="changePerson(i)"></p>
       <p class="actions__delete" (click)="personIdForDelete = person.id; deletePersonFlag = true"></p>
