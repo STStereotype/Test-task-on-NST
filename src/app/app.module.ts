@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 
 import { Components } from './components';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PersonService } from "./components/person/service/person.service";
-import {HttpClientModule} from "@angular/common/http";
-import {SharedComponents} from "./shared/components";
+import { PersonService } from './components/person/service/person.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedComponents } from './shared/components';
+import { ToastService } from './shared/service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {SharedComponents} from "./shared/components";
     FormsModule
   ],
   providers: [
-    PersonService
+    PersonService,
+    ToastService
   ],
   bootstrap: [AppComponent]
 })

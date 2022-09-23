@@ -5,6 +5,11 @@
     <li>Фамилия</li>
     <li></li>
   </ul>
+  <ng-container *ngIf="noDate">
+    <div class="no-date">
+      <p>Нет данных</p>
+    </div>
+  </ng-container>
   <ul class="employee" *ngFor="let person of persons; let i = index">
     <li class="icon"></li>
     <li>{{person.firstName}}</li>

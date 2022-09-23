@@ -13,4 +13,5 @@ body {
   font-weight: 400;
   margin: 0 auto;
   padding: 10px 30px 30px 30px;
+  overflow-x:hidden;
 }

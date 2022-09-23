@@ -125,3 +125,38 @@
   font-size: 18px;
   padding: 3px 10px;
 }
+.no-date {
+  display: block;
+  background: #aaaaaa;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+}
+
+.toast_wrapper {
+  position: absolute;
+  display: flex;
+  transition: all 0.4s ease-out 0s;
+}
+.access {
+  position: relative;
+  background: rgb(139, 195, 74);
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.9);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
+.warning {
+  background: rgb(217, 217, 55);
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.9);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
+.error {
+  background: rgb(217, 55, 55);
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.9);
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
