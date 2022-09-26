@@ -4,7 +4,9 @@ import { TypeMessageModel } from './enum/type-message.model';
 @Injectable()
 export class ToastService {
   private elements: Array<string> = [];
+
   lastElement = 'toast_0';
+
   @Input() typeMessage: TypeMessageModel = TypeMessageModel.access;
 
   createToastMessage(
@@ -25,7 +27,7 @@ export class ToastService {
     topElement!.style.top = `${Number(topElement!.style.top.replace('px', '')) + topElement!.clientHeight + 45}px`;
     if (this.elements.length > 1) {
       for (let i = this.elements.length - 1; i > 0; i--) {
-        let topElement =  document.getElementById(`${this.elements[i]}`);
+        topElement =  document.getElementById(`${this.elements[i]}`);
         let currentElement =  document.getElementById(`${this.elements[i - 1]}`);
         currentElement!.style.top = `${Number(topElement!.style.top.replace('px', '')) + topElement!.clientHeight + 15}px`;
       }
@@ -37,7 +39,7 @@ export class ToastService {
       setTimeout(() => {
         this.elements.splice(0, 1);
         element!.remove();
-      }, 400)
-    }, 3000)
+      }, 400);
+    }, 3000);
   }
 }

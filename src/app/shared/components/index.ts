@@ -6,5 +6,5 @@ import { ModalDialogComponent } from './modalDialogComponent/modal-dialog-compon
 
 export const SharedComponents = [
   AuxiliaryFormComponent,
-  ModalDialogComponent
+  ModalDialogComponent,
 ];

@@ -10,6 +10,7 @@
           name="firstName"
           formControlName="firstName"
           (input)="onlyLetters(form.get('firstName'))"
+          maxlength="15"
           placeholder="Введите имя сотрудника">
         <p *ngIf="validation(form.get('firstName'))" class="invalid">Обязательное поле!</p>
         <input
@@ -17,6 +18,7 @@
           name="lastName"
           formControlName="lastName"
           (input)="onlyLetters(form.get('lastName'))"
+          maxlength="15"
           placeholder="Введите фамилию сотрудника">
         <p *ngIf="validation(form.get('lastName'))" class="invalid">Обязательное поле!</p>
       </div>

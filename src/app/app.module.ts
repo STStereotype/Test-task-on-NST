@@ -15,19 +15,19 @@ import { ToastService } from './shared/service';
   declarations: [
     AppComponent,
     Components,
-    SharedComponents
+    SharedComponents,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     PersonService,
-    ToastService
+    ToastService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -20,6 +20,7 @@
   }
 .text {
   font-size: var(--fonst-size__text);
+  cursor: default;
 }
 .title {
   border-bottom: 1px solid #999999;
@@ -27,6 +28,7 @@
   background: #DDDDDD;
   font-weight: 700;
   font-size: var(--fonst-size__title);
+  cursor: default;
 }
 .employee {
   border-bottom: 1px solid #999999;
@@ -34,6 +36,7 @@
 .actions {
   display: flex;
   margin: 0 0 0 auto;
+  cursor: pointer;
 }
 
 .actions p {
@@ -42,9 +45,19 @@
 }
 .actions__edit {
   background: var(--icon-pencil) center/cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: border 0.4s;
+}
+.actions__edit:hover {
+  border: 1px solid black;
 }
 .actions__delete {
   background: var(--icon-close) center/cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: border 0.4s;
+}
+.actions__delete:hover {
+  border: 1px solid black;
 }
 .icon {
   width: 25px;
@@ -59,6 +72,11 @@
   padding: 12px 10px;
   border-radius: 5px;
   margin: 15px 0 0 0;
+  transition: box-shadow 0.4s;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0 0 20px #3D8BCD;
 }
 .form_wrapper, .modal-dialog_wrapper{
   width: 100%;
@@ -96,6 +114,9 @@
   cursor: pointer;
   margin: 10px 0 0 10px;
 }
+.back:hover {
+  text-decoration: underline;
+}
 .input_wrapper {
   display: flex;
   flex-direction: column;
@@ -125,17 +146,24 @@
   justify-content: space-between;
   padding: 0 10px 10px 10px;
 }
-.btn_box .btn_red {
-  background: #dc0000;
+.btn_red, .btn_green {
   border: none;
   padding: 3px 10px;
   font-size: var(--fonst-size__btn);
+  cursor: pointer;
+  transition: box-shadow 0.4s;
+}
+.btn_box .btn_red {
+  background: #dc0000;
 }
 .btn_box .btn_green {
   background: #00bb00;
-  border: none;
-  padding: 3px 10px;
-  font-size: var(--fonst-size__btn);
+}
+.btn_red:hover {
+  box-shadow: 0 0 15px #dc0000;
+}
+.btn_green:hover {
+  box-shadow: 0 0 15px #00bb00;
 }
 .no-date {
   display: block;

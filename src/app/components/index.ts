@@ -1,7 +1,7 @@
-export * from './person/persons-list';
+export * from './person/persons-list.component';
 
-import { PersonsList } from './person/persons-list'
+import { PersonsListComponent } from './person/persons-list.component';
 
 export const Components = [
-  PersonsList
+  PersonsListComponent,
 ];
